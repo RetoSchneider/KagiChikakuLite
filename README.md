@@ -1,2 +1,2 @@
 # KagiChikakuLite
-Nice and simple password saver desktop-app
+Nice and simple password saver desktop-app created with Electron and Node.js
