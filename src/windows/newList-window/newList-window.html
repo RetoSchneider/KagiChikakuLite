@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kagi-Chikaku-Lite</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="font-roboto text-xs m-0 p-0 bg-gray-100 text-gray-800 flex flex-col h-screen"
+  >
+    <header
+      class="bg-gradient-to-br from-purple-700 to-purple-500 text-white py-1 flex justify-center items-center shadow-md"
+    >
+      <div class="header-content">
+        <h1 class="m-0 font-bold text-xl">Kagi-Chikaku-Lite</h1>
+      </div>
+    </header>
+
+    <main class="flex-1 overflow-y-auto p-3">
+      <section
+        class="bg-gray-200 my-3 p-3 rounded-lg shadow-lg max-w-xl mx-auto"
+      >
+        <div>
+          <label class="font-extrabold text-md mb-2 block"
+            >Name of the list:</label
+          >
+          <input
+            type="text"
+            id="list-name"
+            class="w-full p-1 border border-gray-300 rounded-md mb-3"
+            placeholder="Enter list name..."
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="font-extrabold text-md mb-1 block">Set password:</label>
+          <div class="flex">
+            <input
+              type="password"
+              id="list-password"
+              class="flex-grow p-1 border border-gray-300 rounded-l-md"
+              placeholder="Enter password..."
+            />
+            <button
+              id="show-password"
+              class="bg-purple-700 font-bold text-white p-1 rounded-r-md hover:bg-purple-600 transition-colors duration-200"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label class="font-extrabold text-md mb-1 block"
+            >Repeat password:</label
+          >
+          <input
+            type="password"
+            id="repeat-password"
+            class="w-full p-1 border border-gray-300 rounded-md mb-2"
+            placeholder="Repeat password..."
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="font-extrabold text-md mb-1 block"
+            >Email for Backup:</label
+          >
+          <input
+            type="email"
+            id="backup-email"
+            class="w-full p-1 border border-gray-300 rounded-md"
+            placeholder="Enter backup email..."
+          />
+        </div>
+
+        <button
+          id="create-list"
+          class="w-full bg-purple-700 text-white font-bold p-1 rounded-md hover:bg-purple-600 transition-colors duration-200"
+        >
+          Create
+        </button>
+        <div class="mt-2 flex justify-center">
+          <button
+            id="return-button"
+            class="bg-red-600 w-full text-white border-none cursor-pointer font-medium hover:bg-red-500 p-1 rounded-md"
+          >
+            Return
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="flex justify-between bg-gray-800 text-white p-2 text-xs w-full"
+    >
+      <div>Version 1.0.0 - KCL</div>
+      <div>© 2023 All rights reserved</div>
+    </footer>
+
+    <script src="./newList-window.js"></script>
+  </body>
+</html>

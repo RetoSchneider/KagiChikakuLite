@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kagi-Chikaku-Lite</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="font-roboto text-xs m-0 p-0 bg-gray-100 text-gray-800 flex flex-col h-screen"
+  >
+    <header
+      class="bg-gradient-to-br from-purple-700 to-purple-500 text-white py-1 flex justify-center items-center shadow-md"
+    >
+      <div class="header-content">
+        <h1 class="m-0 font-bold text-xl">Kagi-Chikaku-Lite</h1>
+      </div>
+    </header>
+
+    <main class="flex-1 overflow-y-auto p-3">
+      <section
+        id="password-list"
+        class="bg-gray-200 my-3 p-3 rounded-lg shadow-lg max-w-2xl mx-auto"
+      >
+        <h2 class="text-md mb-3 font-extrabold">Stored Passwords:</h2>
+        <ul id="list" class="list-none p-0 font-normal"></ul>
+        <button
+          id="add-password-button"
+          class="w-full font-bold bg-purple-700 text-white py-1 px-4 rounded-md mb-3 hover:bg-purple-600 transition-colors duration-200"
+        >
+          Add Password
+        </button>
+        <div class="mb-5 flex justify-center">
+          <button
+            id="exit-storage-button"
+            class="bg-red-600 w-full text-white border-none cursor-pointer font-medium hover:bg-red-500 p-1 rounded-md"
+          >
+            Exit
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="flex justify-between bg-gray-800 text-white p-2 text-xs w-full"
+    >
+      <div>Version 1.0.0 - KCL</div>
+      <div>© 2023 All rights reserved</div>
+    </footer>
+
+    <script src="./storage-window.js"></script>
+  </body>
+</html>
