@@ -1,16 +1,16 @@
 let mainWindow;
 
 const navigate = (event, page) => {
-    if (mainWindow) {
-        mainWindow.loadFile(`src/windows/${page}/${page}.html`);
-    }
+  if (mainWindow) {
+    mainWindow.loadFile(`src/windows/${page}/${page}.html`);
+  }
 };
 
 const setMainWindow = (win) => {
-    mainWindow = win;
+  mainWindow = win;
 };
 
 module.exports = {
-    navigate,
-    setMainWindow
+  navigate,
+  setMainWindow,
 };
