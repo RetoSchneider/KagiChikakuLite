@@ -1,5 +1,7 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
+const saveCsv = require("./src/ipcHandlers/ipcSaveCsv");
+const { navigate, setMainWindow } = require("./src/ipcHandlers/ipcNavigate");
 
 let mainWindow;
 
@@ -16,20 +18,14 @@ const createWindow = () => {
     },
   });
 
-  loadPage("welcome-window");
-};
-
-const loadPage = (page) => {
-  mainWindow.loadFile(path.join(__dirname, `src/windows/${page}/${page}.html`));
+  setMainWindow(mainWindow);
+  navigate(null, "welcome-window");
 };
 
 app.on("ready", createWindow);
 
-const { ipcMain } = require("electron");
-
-ipcMain.on("navigate", (event, page) => {
-  loadPage(page);
-});
+ipcMain.on("navigate", navigate);
+ipcMain.on("save-csv", saveCsv);
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
