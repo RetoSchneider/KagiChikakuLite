@@ -5,7 +5,7 @@ const saveCsv = (event, csvContent) => {
   dialog
     .showSaveDialog({
       title: "Save the list as CSV",
-      defaultPath: "~/newList.csv",
+      defaultPath: "~/Passwords.csv",
       filters: [{ name: "CSV Files", extensions: ["csv"] }],
     })
     .then((file) => {
