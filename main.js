@@ -3,6 +3,9 @@ const path = require("path");
 const saveCsv = require("./src/ipcHandlers/ipcSaveCsv");
 const { navigate, setMainWindow } = require("./src/ipcHandlers/ipcNavigate");
 
+require("./src/ipcHandlers/ipcReadCsv");
+require("./src/ipcHandlers/ipcOpenFileDialog");
+
 let mainWindow;
 
 const createWindow = () => {
