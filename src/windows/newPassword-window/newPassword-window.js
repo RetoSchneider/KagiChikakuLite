@@ -1,3 +1,3 @@
 document.getElementById("return-button").addEventListener("click", () => {
-  window.electron.send("navigate", "storage-window");
+  window.electronAPI.send("navigate", "storage-window");
 });

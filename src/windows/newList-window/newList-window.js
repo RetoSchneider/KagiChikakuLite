@@ -4,18 +4,19 @@ document.getElementById("create-list").addEventListener("click", () => {
   const backupEmail = document.getElementById("backup-email").value;
 
   const username = null;
+  const password = null;
   const website = null;
   const description = null;
 
-  const csvContent = `List Name,Password, Username, Website, Description\n${listName},${listPassword},${backupEmail},${username},${website},${description}`;
+  const csvContent = `List Name,List Password, Username, Password, Website, Description\n${listName},${listPassword},${backupEmail},${username},${password},${website},${description}`;
 
-  window.electron.send("save-csv", csvContent);
+  window.electronAPI.send("save-csv", csvContent);
 });
 
-window.electron.receive("save-csv-response", (message) => {
+window.electronAPI.receive("save-csv-response", (message) => {
   console.log(message);
 });
 
 document.getElementById("return-button").addEventListener("click", () => {
-  window.electron.send("navigate", "welcome-window");
+  window.electronAPI.send("navigate", "welcome-window");
 });
