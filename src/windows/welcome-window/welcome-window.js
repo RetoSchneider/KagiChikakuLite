@@ -4,6 +4,7 @@ document.getElementById("browse-file").addEventListener("click", () => {
 
 window.electronAPI.receive("selected-file", (filePath) => {
   document.getElementById("file-path").value = filePath;
+  localStorage.setItem("selectedFilePath", filePath);
 });
 
 document.getElementById("open-list").addEventListener("click", () => {
@@ -18,7 +19,7 @@ document.getElementById("open-list").addEventListener("click", () => {
 });
 
 window.electronAPI.receive("csv-content", (csvData) => {
-  localStorage.setItem("csvData", JSON.stringify(csvData)); // Storing data in localStorage
+  localStorage.setItem("csvData", JSON.stringify(csvData));
   window.electronAPI.send("navigate", "storage-window");
 });
 

@@ -5,6 +5,7 @@ const { navigate, setMainWindow } = require("./src/ipcHandlers/ipcNavigate");
 
 require("./src/ipcHandlers/ipcReadCsv");
 require("./src/ipcHandlers/ipcOpenFileDialog");
+require("./src/ipcHandlers/ipcAddNewPassword");
 
 let mainWindow;
 

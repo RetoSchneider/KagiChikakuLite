@@ -2,9 +2,7 @@ function displayPasswords(csvData) {
   const listElement = document.getElementById("list");
   listElement.innerHTML = "";
 
-  csvData.forEach((entry, index) => {
-    if (index === 0) return;
-
+  csvData.slice(1).forEach((entry) => {
     const listItem = document.createElement("li");
     listItem.classList.add("flex", "justify-between", "mb-2", "items-center");
 
@@ -25,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const csvData = JSON.parse(localStorage.getItem("csvData"));
   if (csvData) {
     displayPasswords(csvData);
+  }
+});
+
+window.electronAPI.receive("add-password-response", (message) => {
+  if (message === "Password added successfully!") {
+    window.electronAPI.send("navigate", "storage-window");
   }
 });
 
