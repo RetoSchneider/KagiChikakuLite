@@ -4,7 +4,8 @@ document.getElementById("password-form").addEventListener("submit", (event) => {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   const website = document.getElementById("website").value;
-  const description = document.getElementById("description").value || "No description";
+  const description =
+    document.getElementById("description").value || "No description";
 
   const passwordData = {
     username,

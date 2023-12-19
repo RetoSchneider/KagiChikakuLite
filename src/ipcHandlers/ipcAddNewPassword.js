@@ -13,9 +13,9 @@ function appendPasswordToCSV(filePath, passwordData, event) {
       event.reply("add-password-response", "CSV file not found.");
       return;
     }
-    const newLine = `\n,,,${username || ""},${password || ""},${website || ""},${
-      description || "no description"
-    }`;
+    const newLine = `\n,,,${username || ""},${password || ""},${
+      website || ""
+    },${description || "no description"}`;
 
     fs.appendFile(filePath, newLine, "utf8", (appendErr) => {
       if (appendErr) {
