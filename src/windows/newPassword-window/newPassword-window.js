@@ -24,8 +24,12 @@ document.getElementById("password-form").addEventListener("submit", (event) => {
 
 window.electronAPI.receive("add-password-response", (message) => {
   if (message === "Password added successfully!") {
-    window.electronAPI.send("navigate", "storage-window");
-    window.electronAPI.send("request-password-list-update", filePath);
+    const filePath = localStorage.getItem("selectedFilePath");
+    if (filePath) {
+      window.electronAPI.send("fetch-csv-data", filePath);
+    } else {
+      console.error("File path not found");
+    }
   } else {
     console.error(message);
   }

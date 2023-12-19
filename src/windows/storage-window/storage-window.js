@@ -26,6 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+window.electronAPI.receive("updated-csv-data", (csvData) => {
+  displayPasswords(csvData);
+});
+
 window.electronAPI.receive("add-password-response", (message) => {
   if (message === "Password added successfully!") {
     window.electronAPI.send("navigate", "storage-window");
@@ -39,3 +43,13 @@ document.getElementById("add-password-button").addEventListener("click", () => {
 document.getElementById("exit-storage-button").addEventListener("click", () => {
   window.electronAPI.send("navigate", "welcome-window");
 });
+
+function fetchDataAndDisplay() {
+  const filePath = localStorage.getItem("selectedFilePath");
+  if (filePath) {
+    window.electronAPI.send("fetch-csv-data", filePath);
+  } else {
+    console.error("File path not found");
+  }
+}
+document.addEventListener("DOMContentLoaded", fetchDataAndDisplay);
