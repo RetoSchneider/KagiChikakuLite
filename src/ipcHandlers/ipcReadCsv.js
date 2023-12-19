@@ -28,3 +28,5 @@ ipcMain.on("read-csv", (event, filePath) => {
       event.reply("csv-content", []);
     });
 });
+
+module.exports = { readCsv };

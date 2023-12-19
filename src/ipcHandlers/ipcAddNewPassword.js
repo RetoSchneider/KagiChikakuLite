@@ -3,6 +3,7 @@ const fs = require("fs");
 
 ipcMain.on("add-password", (event, { filePath, passwordData }) => {
   appendPasswordToCSV(filePath, passwordData, event);
+  event.reply("add-password-response", "Password added successfully!");
 });
 
 function appendPasswordToCSV(filePath, passwordData, event) {

@@ -24,6 +24,8 @@ document.getElementById("password-form").addEventListener("submit", (event) => {
 
 window.electronAPI.receive("add-password-response", (message) => {
   if (message === "Password added successfully!") {
+    window.electronAPI.send("navigate", "storage-window");
+    window.electronAPI.send("request-password-list-update", filePath);
   } else {
     console.error(message);
   }
