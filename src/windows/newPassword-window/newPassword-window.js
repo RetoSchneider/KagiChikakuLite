@@ -30,6 +30,7 @@ window.electronAPI.receive("add-password-response", (message) => {
     } else {
       console.error("File path not found");
     }
+    window.electronAPI.send("navigate", "storage-window");
   } else {
     console.error(message);
   }
