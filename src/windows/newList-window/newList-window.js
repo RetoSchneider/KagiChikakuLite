@@ -3,12 +3,7 @@ document.getElementById("create-list").addEventListener("click", () => {
   const listPassword = document.getElementById("list-password").value;
   const backupEmail = document.getElementById("backup-email").value;
 
-  const username = null;
-  const password = null;
-  const website = null;
-  const description = null;
-
-  const csvContent = `List Name,List Password, Username, Password, Website, Description\n${listName},${listPassword},${backupEmail},${username},${password},${website},${description}`;
+  const csvContent = `List Name,List Password,Backup Email,Username,Password,Website,Description\n${listName},${listPassword},${backupEmail},,,,,`;
 
   window.electronAPI.send("save-csv", csvContent);
 });
