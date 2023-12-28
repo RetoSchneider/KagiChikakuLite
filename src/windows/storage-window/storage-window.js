@@ -66,7 +66,7 @@ function displayPasswords(csvData) {
 
 function handleDeletePassword(event) {
   const button = event.target;
-  const filePath = localStorage.getItem('selectedFilePath');
+  const filePath = localStorage.getItem("selectedFilePath");
   const username = button.getAttribute("data-username");
   const website = button.getAttribute("data-website");
   window.electronAPI.send("delete-password", { filePath, username, website });
