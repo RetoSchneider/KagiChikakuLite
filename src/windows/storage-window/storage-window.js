@@ -41,7 +41,7 @@ function displayPasswords(csvData) {
   const listElement = document.getElementById("list");
   listElement.innerHTML = "";
 
-  csvData.slice(1).forEach((entry, index) => {
+  csvData.slice(1).forEach((entry) => {
     const listItem = document.createElement("li");
     listItem.classList.add("flex", "justify-between", "mb-2", "items-center");
 
@@ -57,11 +57,19 @@ function displayPasswords(csvData) {
 
     listElement.appendChild(listItem);
 
+    const editButton = listItem.querySelector(".edit-button");
+    editButton.addEventListener("click", () => handleEditPassword(entry));
+
     const deleteButton = listItem.querySelector(".delete-button");
     deleteButton.setAttribute("data-username", entry.Username);
     deleteButton.setAttribute("data-website", entry.Website);
     deleteButton.addEventListener("click", handleDeletePassword);
   });
+}
+
+function handleEditPassword(entry) {
+  localStorage.setItem("editEntry", JSON.stringify(entry));
+  window.electronAPI.send("navigate", "editPassword-window");
 }
 
 function handleDeletePassword(event) {

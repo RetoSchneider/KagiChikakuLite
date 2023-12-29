@@ -9,6 +9,7 @@ require("./src/ipcHandlers/ipcAddNewPassword");
 require("./src/ipcHandlers/ipcUpdatePasswords");
 require("./src/ipcHandlers/ipcFetchCsvData");
 require("./src/ipcHandlers/ipcDeletePassword");
+require("./src/ipcHandlers/ipcEditPassword");
 
 let mainWindow;
 
