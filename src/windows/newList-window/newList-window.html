@@ -21,12 +21,14 @@
 
     <main class="flex-1 overflow-y-auto p-3">
       <section
-        class="bg-gray-200 my-3 p-3 rounded-lg shadow-lg max-w-xl mx-auto"
+        id="new-list-section"
+        class="bg-gray-200 my-3 p-3 rounded-lg shadow-lg max-w-2xl mx-auto"
       >
+        <h2 class="text-md mb-5 font-extrabold">Create new list:</h2>
+        <!-- Added a subtitle similar to storage-window -->
         <div>
-          <label class="font-extrabold text-md mb-2 block"
-            >Name of the list:</label
-          >
+          <label class="font-bold text-xs mb-2 block">Name of the list:</label>
+          <!-- Adjusted label styles to match storage-window -->
           <input
             type="text"
             id="list-name"
@@ -36,7 +38,8 @@
         </div>
 
         <div class="mb-3">
-          <label class="font-extrabold text-md mb-1 block">Set password:</label>
+          <label class="font-bold text-xs mb-1 block">Set password:</label>
+          <!-- Adjusted label styles to match storage-window -->
           <div class="flex">
             <input
               type="password"
@@ -54,9 +57,8 @@
         </div>
 
         <div class="mb-2">
-          <label class="font-extrabold text-md mb-1 block"
-            >Repeat password:</label
-          >
+          <label class="font-bold text-xs mb-1 block">Repeat password:</label>
+          <!-- Adjusted label styles to match storage-window -->
           <input
             type="password"
             id="repeat-password"
@@ -66,9 +68,8 @@
         </div>
 
         <div class="mb-3">
-          <label class="font-extrabold text-md mb-1 block"
-            >Email for Backup:</label
-          >
+          <label class="font-bold text-xs mb-1 block">Email for Backup:</label>
+          <!-- Adjusted label styles to match storage-window -->
           <input
             type="email"
             id="backup-email"
