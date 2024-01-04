@@ -15,3 +15,29 @@ window.electronAPI.receive("save-csv-response", (message) => {
 document.getElementById("return-button").addEventListener("click", () => {
   window.electronAPI.send("navigate", "welcome-window");
 });
+
+document
+  .getElementById("show-list-password")
+  .addEventListener("click", function () {
+    const passwordInput = document.getElementById("list-password");
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      this.textContent = "Hide";
+    } else {
+      passwordInput.type = "password";
+      this.textContent = "Show";
+    }
+  });
+
+document
+  .getElementById("show-repeat-password")
+  .addEventListener("click", function () {
+    const repeatPasswordInput = document.getElementById("repeat-password");
+    if (repeatPasswordInput.type === "password") {
+      repeatPasswordInput.type = "text";
+      this.textContent = "Hide";
+    } else {
+      repeatPasswordInput.type = "password";
+      this.textContent = "Show";
+    }
+  });
