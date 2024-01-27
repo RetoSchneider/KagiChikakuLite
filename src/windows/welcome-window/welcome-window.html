@@ -7,6 +7,10 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="./welcome-window.css"
+    />
   </head>
   <body
     class="font-roboto text-xs m-0 p-0 bg-gray-100 text-gray-800 flex flex-col h-screen"
@@ -43,11 +47,20 @@
         </div>
 
         <div class="mb-3">
-          <label class="text-lg mb-4 font-bold text-purple-700">Password:</label>
+          <div class="flex justify-between items-end">
+            <label
+              class="text-lg font-bold text-purple-700 mb-1"
+              for="list-password"
+              >Password:</label
+            >
+            <a href="#" class="text-purple-700 hover:text-purple-600 text-sm"
+              >Forgot password?</a
+            >
+          </div>
           <input
             type="password"
             id="list-password"
-            class="w-full p-1 border border-gray-300 rounded-md mt-3"
+            class="w-full p-1 border border-gray-300 rounded-md mt-2"
             placeholder="Enter password..."
           />
         </div>
@@ -65,6 +78,16 @@
           Create new password list
         </button>
       </section>
+      <div class="flex justify-center mt-6">
+        <img
+  src="../../assets/images/Kagi-Chikaku-Lite-Logo-OriDesign.jpg"
+  alt="Kagi-Chikaku-Lite Logo"
+  width="110"
+  height="110"
+  class="rounded-full logo-animation"
+/>
+
+      </div>
     </main>
 
     <footer
