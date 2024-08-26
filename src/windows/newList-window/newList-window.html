@@ -7,6 +7,13 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      /* Custom styles for disabled button */
+      .disabled-btn {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    </style>
   </head>
   <body
     class="font-roboto text-xs m-0 p-0 bg-gray-100 text-gray-800 flex flex-col h-screen"
@@ -84,7 +91,8 @@
 
         <button
           id="create-list"
-          class="w-full mt-1 bg-purple-700 text-white font-bold p-1 rounded-md hover:bg-purple-600 transition-colors duration-200"
+          class="w-full mt-1 bg-purple-700 text-white font-bold p-1 rounded-md hover:bg-purple-600 transition-colors duration-200 disabled-btn"
+          disabled
         >
           Create
         </button>

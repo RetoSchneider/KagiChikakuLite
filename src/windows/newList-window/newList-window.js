@@ -1,7 +1,36 @@
-document.getElementById("create-list").addEventListener("click", () => {
-  const listName = document.getElementById("list-name").value;
-  const listPassword = document.getElementById("list-password").value;
-  const backupEmail = document.getElementById("backup-email").value;
+const listNameInput = document.getElementById("list-name");
+const listPasswordInput = document.getElementById("list-password");
+const repeatPasswordInput = document.getElementById("repeat-password");
+const backupEmailInput = document.getElementById("backup-email");
+const createListButton = document.getElementById("create-list");
+
+function checkFormValidity() {
+  const listName = listNameInput.value.trim();
+  const listPassword = listPasswordInput.value.trim();
+  const repeatPassword = repeatPasswordInput.value.trim();
+  const backupEmail = backupEmailInput.value.trim();
+
+  const isFormValid =
+    listName && listPassword && repeatPassword && backupEmail && listPassword === repeatPassword;
+
+  if (isFormValid) {
+    createListButton.disabled = false;
+    createListButton.classList.remove("disabled-btn");
+  } else {
+    createListButton.disabled = true;
+    createListButton.classList.add("disabled-btn");
+  }
+}
+
+listNameInput.addEventListener("input", checkFormValidity);
+listPasswordInput.addEventListener("input", checkFormValidity);
+repeatPasswordInput.addEventListener("input", checkFormValidity);
+backupEmailInput.addEventListener("input", checkFormValidity);
+
+createListButton.addEventListener("click", () => {
+  const listName = listNameInput.value;
+  const listPassword = listPasswordInput.value;
+  const backupEmail = backupEmailInput.value;
 
   const csvContent = `List Name,List Password,Backup Email,Username,Password,Website,Description\n${listName},${listPassword},${backupEmail},,,,,`;
 
@@ -41,3 +70,5 @@ document
       this.textContent = "Show";
     }
   });
+
+checkFormValidity();
