@@ -19,7 +19,10 @@ const createWindow = () => {
     maxWidth: 330,
     minHeight: 620,
     maxHeight: 620,
-    icon: path.join(__dirname, './src/assets/icons/Kagi-Chikaku-Lite-Logo-OriDesign.ico'),
+    icon: path.join(
+      __dirname,
+      "./src/assets/icons/Kagi-Chikaku-Lite-Logo-OriDesign.ico",
+    ),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
